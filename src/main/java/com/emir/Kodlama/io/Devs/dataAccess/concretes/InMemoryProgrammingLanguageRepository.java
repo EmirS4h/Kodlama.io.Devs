@@ -33,14 +33,11 @@ public class InMemoryProgrammingLanguageRepository implements ProgrammingLanguag
 
 	@Override
 	public void update(ProgrammingLanguage language) {
-		int index = 0;
 		for (int i = 0; i < programmingLanguages.size(); i++) {
 			if (programmingLanguages.get(i).getId() == language.getId()) {
-				index = i;
+				this.programmingLanguages.get(i).setName(language.getName());
 			}
 		}
-		this.programmingLanguages.add(index, language);
-		this.programmingLanguages.remove(index + 1);
 	}
 
 	@Override
@@ -61,7 +58,7 @@ public class InMemoryProgrammingLanguageRepository implements ProgrammingLanguag
 	@Override
 	public boolean checkIfExists(ProgrammingLanguage language) {
 		for (ProgrammingLanguage programmingLanguage : programmingLanguages) {
-			if (programmingLanguage.getName().equals(language.getName())) {
+			if (programmingLanguage.getName().equals(language.getName()) || programmingLanguage.getId() == language.getId()) {
 				return true;
 			}
 		}
