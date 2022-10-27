@@ -12,6 +12,8 @@ public interface ProgrammingLanguageService {
 	void update(ProgrammingLanguage language);
 
 	ProgrammingLanguage getById(int id);
-	
+
 	List<ProgrammingLanguage> getAll();
+
+	boolean checkIfExists(ProgrammingLanguage language);
 }

@@ -24,7 +24,7 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
 		// Eger programlama dili bulunamadıysa *id* ile
 		if (pl == null) {
 			// Programlama dili ismi bos veya bosluk olamaz
-			if (!language.getName().isBlank() && !this.repository.checkIfExists(language))
+			if (!language.getName().isBlank() && !this.checkIfExists(language))
 				this.repository.add(language);
 			else {
 				return;
@@ -52,6 +52,16 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
 	@Override
 	public List<ProgrammingLanguage> getAll() {
 		return this.repository.getAll();
+	}
+
+	public boolean checkIfExists(ProgrammingLanguage language) {
+		for (ProgrammingLanguage programmingLanguage : this.repository.getAll()) {
+			if (programmingLanguage.getName().equals(language.getName())
+					|| programmingLanguage.getId() == language.getId()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
