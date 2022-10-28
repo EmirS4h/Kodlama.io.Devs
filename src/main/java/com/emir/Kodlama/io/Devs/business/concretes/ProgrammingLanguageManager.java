@@ -19,18 +19,11 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
 
 	@Override
 	public void add(ProgrammingLanguage language) {
-		ProgrammingLanguage pl = this.repository.getById(language.getId());
-
-		// Eger programlama dili bulunamadıysa *id* ile
-		if (pl == null) {
-			// Programlama dili ismi bos veya bosluk olamaz
-			if (!language.getName().isBlank() && !this.checkIfExists(language))
-				this.repository.add(language);
-			else {
-				return;
-			}
-		} else {
+		if (this.checkIfExists(language)) {
 			return;
+		} else {
+			if (!language.getName().isBlank())
+				this.repository.add(language);
 		}
 	}
 

@@ -27,7 +27,7 @@ public class ProgrammingLanguagesController {
 	}
 
 	@PostMapping("/add")
-	public void add(@RequestBody ProgrammingLanguage language) {
+	public void add(@RequestBody ProgrammingLanguage language){
 		this.languageService.add(language);
 	}
 
