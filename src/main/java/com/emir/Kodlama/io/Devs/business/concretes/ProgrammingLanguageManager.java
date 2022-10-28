@@ -2,6 +2,7 @@ package com.emir.Kodlama.io.Devs.business.concretes;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.emir.Kodlama.io.Devs.business.abstracts.ProgrammingLanguageService;
@@ -13,6 +14,7 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
 
 	private ProgrammingLanguageRepository repository;
 
+	@Autowired
 	public ProgrammingLanguageManager(ProgrammingLanguageRepository repository) {
 		this.repository = repository;
 	}

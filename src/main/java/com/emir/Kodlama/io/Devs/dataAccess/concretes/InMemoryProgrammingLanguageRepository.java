@@ -19,6 +19,8 @@ public class InMemoryProgrammingLanguageRepository implements ProgrammingLanguag
 		this.programmingLanguages.add(new ProgrammingLanguage(1, "C#"));
 		this.programmingLanguages.add(new ProgrammingLanguage(2, "Python"));
 		this.programmingLanguages.add(new ProgrammingLanguage(3, "Java"));
+		this.programmingLanguages.add(new ProgrammingLanguage(4, "Rust"));
+		this.programmingLanguages.add(new ProgrammingLanguage(5, "Javascript"));
 	}
 
 	@Override
